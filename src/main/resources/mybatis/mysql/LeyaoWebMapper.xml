@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.leyao.web.dao.mapper.LeyaoWebMapper">
+  <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
+    <id column="row_number" jdbcType="INTEGER" property="rowNumber" />
+    <result column="event_name" jdbcType="VARCHAR" property="eventName" />
+    <result column="event_home_page_priority_level_code" jdbcType="INTEGER" property="eventHomePagePriorityLevelCode" />
+    <result column="event_event_list_page_priority_level_code" jdbcType="INTEGER" property="eventEventListPagePriorityLevelCode" />
+    <result column="event_header_content_url" jdbcType="VARCHAR" property="eventHeaderContentUrl" />
+    <result column="event_detail_content_1_url" jdbcType="VARCHAR" property="eventDetailContent1Url" />
+    <result column="event_detail_content_2_url" jdbcType="VARCHAR" property="eventDetailContent2Url" />
+    <result column="event_detail_content_3_url" jdbcType="VARCHAR" property="eventDetailContent3Url" />
+    <result column="event_detail_content_4_url" jdbcType="VARCHAR" property="eventDetailContent4Url" />
+    <result column="event_detail_content_5_url" jdbcType="VARCHAR" property="eventDetailContent5Url" />
+    <result column="event_detail_content_6_url" jdbcType="VARCHAR" property="eventDetailContent6Url" />
+    <result column="event_detail_content_7_url" jdbcType="VARCHAR" property="eventDetailContent7Url" />
+    <result column="event_detail_content_8_url" jdbcType="VARCHAR" property="eventDetailContent8Url" />
+    <result column="event_detail_content_9_url" jdbcType="VARCHAR" property="eventDetailContent9Url" />
+    <result column="event_detail_content_10_url" jdbcType="VARCHAR" property="eventDetailContent10Url" />
+    <result column="event_delete_flag" jdbcType="CHAR" property="eventDeleteFlag" />
+    <result column="create_timestamp" jdbcType="TIMESTAMP" property="createTimestamp" />
+    <result column="update_timestamp" jdbcType="TIMESTAMP" property="updateTimestamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    row_number, event_name, event_home_page_priority_level_code, event_event_list_page_priority_level_code, 
+    event_header_content_url, event_detail_content_1_url, event_detail_content_2_url, 
+    event_detail_content_3_url, event_detail_content_4_url, event_detail_content_5_url, 
+    event_detail_content_6_url, event_detail_content_7_url, event_detail_content_8_url, 
+    event_detail_content_9_url, event_detail_content_10_url, event_delete_flag, create_timestamp, 
+    update_timestamp
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from leyao_web
+    where row_number = #{rowNumber,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from leyao_web
+    where row_number = #{rowNumber,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.leyao.web.entity.LeyaoWeb">
+    insert into leyao_web (row_number, event_name, event_home_page_priority_level_code, 
+      event_event_list_page_priority_level_code, event_header_content_url, 
+      event_detail_content_1_url, event_detail_content_2_url, 
+      event_detail_content_3_url, event_detail_content_4_url, 
+      event_detail_content_5_url, event_detail_content_6_url, 
+      event_detail_content_7_url, event_detail_content_8_url, 
+      event_detail_content_9_url, event_detail_content_10_url, 
+      event_delete_flag, create_timestamp, update_timestamp
+      )
+    values (#{rowNumber,jdbcType=INTEGER}, #{eventName,jdbcType=VARCHAR}, #{eventHomePagePriorityLevelCode,jdbcType=INTEGER}, 
+      #{eventEventListPagePriorityLevelCode,jdbcType=INTEGER}, #{eventHeaderContentUrl,jdbcType=VARCHAR}, 
+      #{eventDetailContent1Url,jdbcType=VARCHAR}, #{eventDetailContent2Url,jdbcType=VARCHAR}, 
+      #{eventDetailContent3Url,jdbcType=VARCHAR}, #{eventDetailContent4Url,jdbcType=VARCHAR}, 
+      #{eventDetailContent5Url,jdbcType=VARCHAR}, #{eventDetailContent6Url,jdbcType=VARCHAR}, 
+      #{eventDetailContent7Url,jdbcType=VARCHAR}, #{eventDetailContent8Url,jdbcType=VARCHAR}, 
+      #{eventDetailContent9Url,jdbcType=VARCHAR}, #{eventDetailContent10Url,jdbcType=VARCHAR}, 
+      #{eventDeleteFlag,jdbcType=CHAR}, #{createTimestamp,jdbcType=TIMESTAMP}, #{updateTimestamp,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.leyao.web.entity.LeyaoWeb">
+    insert into leyao_web
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="rowNumber != null">
+        row_number,
+      </if>
+      <if test="eventName != null">
+        event_name,
+      </if>
+      <if test="eventHomePagePriorityLevelCode != null">
+        event_home_page_priority_level_code,
+      </if>
+      <if test="eventEventListPagePriorityLevelCode != null">
+        event_event_list_page_priority_level_code,
+      </if>
+      <if test="eventHeaderContentUrl != null">
+        event_header_content_url,
+      </if>
+      <if test="eventDetailContent1Url != null">
+        event_detail_content_1_url,
+      </if>
+      <if test="eventDetailContent2Url != null">
+        event_detail_content_2_url,
+      </if>
+      <if test="eventDetailContent3Url != null">
+        event_detail_content_3_url,
+      </if>
+      <if test="eventDetailContent4Url != null">
+        event_detail_content_4_url,
+      </if>
+      <if test="eventDetailContent5Url != null">
+        event_detail_content_5_url,
+      </if>
+      <if test="eventDetailContent6Url != null">
+        event_detail_content_6_url,
+      </if>
+      <if test="eventDetailContent7Url != null">
+        event_detail_content_7_url,
+      </if>
+      <if test="eventDetailContent8Url != null">
+        event_detail_content_8_url,
+      </if>
+      <if test="eventDetailContent9Url != null">
+        event_detail_content_9_url,
+      </if>
+      <if test="eventDetailContent10Url != null">
+        event_detail_content_10_url,
+      </if>
+      <if test="eventDeleteFlag != null">
+        event_delete_flag,
+      </if>
+      <if test="createTimestamp != null">
+        create_timestamp,
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="rowNumber != null">
+        #{rowNumber,jdbcType=INTEGER},
+      </if>
+      <if test="eventName != null">
+        #{eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventHomePagePriorityLevelCode != null">
+        #{eventHomePagePriorityLevelCode,jdbcType=INTEGER},
+      </if>
+      <if test="eventEventListPagePriorityLevelCode != null">
+        #{eventEventListPagePriorityLevelCode,jdbcType=INTEGER},
+      </if>
+      <if test="eventHeaderContentUrl != null">
+        #{eventHeaderContentUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent1Url != null">
+        #{eventDetailContent1Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent2Url != null">
+        #{eventDetailContent2Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent3Url != null">
+        #{eventDetailContent3Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent4Url != null">
+        #{eventDetailContent4Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent5Url != null">
+        #{eventDetailContent5Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent6Url != null">
+        #{eventDetailContent6Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent7Url != null">
+        #{eventDetailContent7Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent8Url != null">
+        #{eventDetailContent8Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent9Url != null">
+        #{eventDetailContent9Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent10Url != null">
+        #{eventDetailContent10Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDeleteFlag != null">
+        #{eventDeleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTimestamp != null">
+        #{createTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTimestamp != null">
+        #{updateTimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.leyao.web.entity.LeyaoWeb">
+    update leyao_web
+    <set>
+      <if test="eventName != null">
+        event_name = #{eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="eventHomePagePriorityLevelCode != null">
+        event_home_page_priority_level_code = #{eventHomePagePriorityLevelCode,jdbcType=INTEGER},
+      </if>
+      <if test="eventEventListPagePriorityLevelCode != null">
+        event_event_list_page_priority_level_code = #{eventEventListPagePriorityLevelCode,jdbcType=INTEGER},
+      </if>
+      <if test="eventHeaderContentUrl != null">
+        event_header_content_url = #{eventHeaderContentUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent1Url != null">
+        event_detail_content_1_url = #{eventDetailContent1Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent2Url != null">
+        event_detail_content_2_url = #{eventDetailContent2Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent3Url != null">
+        event_detail_content_3_url = #{eventDetailContent3Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent4Url != null">
+        event_detail_content_4_url = #{eventDetailContent4Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent5Url != null">
+        event_detail_content_5_url = #{eventDetailContent5Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent6Url != null">
+        event_detail_content_6_url = #{eventDetailContent6Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent7Url != null">
+        event_detail_content_7_url = #{eventDetailContent7Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent8Url != null">
+        event_detail_content_8_url = #{eventDetailContent8Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent9Url != null">
+        event_detail_content_9_url = #{eventDetailContent9Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDetailContent10Url != null">
+        event_detail_content_10_url = #{eventDetailContent10Url,jdbcType=VARCHAR},
+      </if>
+      <if test="eventDeleteFlag != null">
+        event_delete_flag = #{eventDeleteFlag,jdbcType=CHAR},
+      </if>
+      <if test="createTimestamp != null">
+        create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where row_number = #{rowNumber,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.leyao.web.entity.LeyaoWeb">
+    update leyao_web
+    set event_name = #{eventName,jdbcType=VARCHAR},
+      event_home_page_priority_level_code = #{eventHomePagePriorityLevelCode,jdbcType=INTEGER},
+      event_event_list_page_priority_level_code = #{eventEventListPagePriorityLevelCode,jdbcType=INTEGER},
+      event_header_content_url = #{eventHeaderContentUrl,jdbcType=VARCHAR},
+      event_detail_content_1_url = #{eventDetailContent1Url,jdbcType=VARCHAR},
+      event_detail_content_2_url = #{eventDetailContent2Url,jdbcType=VARCHAR},
+      event_detail_content_3_url = #{eventDetailContent3Url,jdbcType=VARCHAR},
+      event_detail_content_4_url = #{eventDetailContent4Url,jdbcType=VARCHAR},
+      event_detail_content_5_url = #{eventDetailContent5Url,jdbcType=VARCHAR},
+      event_detail_content_6_url = #{eventDetailContent6Url,jdbcType=VARCHAR},
+      event_detail_content_7_url = #{eventDetailContent7Url,jdbcType=VARCHAR},
+      event_detail_content_8_url = #{eventDetailContent8Url,jdbcType=VARCHAR},
+      event_detail_content_9_url = #{eventDetailContent9Url,jdbcType=VARCHAR},
+      event_detail_content_10_url = #{eventDetailContent10Url,jdbcType=VARCHAR},
+      event_delete_flag = #{eventDeleteFlag,jdbcType=CHAR},
+      create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
+      update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP}
+    where row_number = #{rowNumber,jdbcType=INTEGER}
+  </update>
+</mapper>
