@@ -1,4 +1,4 @@
-create database leyao;
+--create database leyao;
 use leyao;
 DROP TABLE IF EXISTS `leyao_web`; 
 CREATE TABLE `leyao_web` (
@@ -7,6 +7,7 @@ CREATE TABLE `leyao_web` (
   `tab_name` VARCHAR(50) NOT NULL DEFAULT '?',
   `tab_url` VARCHAR(100) NOT NULL DEFAULT '?',
   `tab_oreder` int NOT NULL DEFAULT -1,
+  `is_delete` CHAR(2) NOT NULL DEFAULT 'N',
   `create_username` VARCHAR(30),
   `create_timestamp` datetime,
   `update_username` VARCHAR(30),  
