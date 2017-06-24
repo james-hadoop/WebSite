@@ -28,7 +28,8 @@ public class LeyaoWebController extends BaseController {
 
     @RequestMapping(value = "/getPageUrlsWithoutPaging", method = RequestMethod.GET)
     public List<String> getPageUrlsWithoutPaging(
-            @RequestParam(value = "clicked_page_id", defaultValue = "0") Integer clickedPageId) {
+            @RequestParam(value = "clicked_page_id", defaultValue = "0") Integer clickedPageId,
+            @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
         logger.info("/leyao_web/getPageUrlsWithoutPaging() called: clicked_page_id={}", clickedPageId);
         List<String> listPageUrls = new ArrayList<String>();
 
@@ -38,7 +39,13 @@ public class LeyaoWebController extends BaseController {
 
             List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getPageUrls(paramMap);
             if (null != listLeyaoWeb && 0 != listLeyaoWeb.size()) {
+                int resultSize = rows;
                 for (LeyaoWeb leyaoWeb : listLeyaoWeb) {
+                    if (resultSize-- < 1) {
+                        // to limit the result size does not exceeds the value
+                        // of "rows" parameter
+                        break;
+                    }
                     listPageUrls.add(leyaoWeb.getTabUrl());
                 }
             }
