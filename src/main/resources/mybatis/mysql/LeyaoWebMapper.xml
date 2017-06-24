@@ -1,142 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leyao.web.dao.mapper.LeyaoWebMapper">
-  <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
-    <id column="tab_id" jdbcType="INTEGER" property="tabId" />
-    <result column="tab_parent_id" jdbcType="INTEGER" property="tabParentId" />
-    <result column="tab_name" jdbcType="VARCHAR" property="tabName" />
-    <result column="tab_url" jdbcType="VARCHAR" property="tabUrl" />
-    <result column="tab_oreder" jdbcType="INTEGER" property="tabOreder" />
-    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
-    <result column="create_timestamp" jdbcType="TIMESTAMP" property="createTimestamp" />
-    <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
-    <result column="update_timestamp" jdbcType="TIMESTAMP" property="updateTimestamp" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    tab_id, tab_parent_id, tab_name, tab_url, tab_oreder, create_username, create_timestamp, 
-    update_username, update_timestamp
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from leyao_web
-    where tab_id = #{tabId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from leyao_web
-    where tab_id = #{tabId,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.leyao.web.entity.LeyaoWeb">
-    insert into leyao_web (tab_id, tab_parent_id, tab_name, 
-      tab_url, tab_oreder, create_username, 
-      create_timestamp, update_username, update_timestamp
-      )
-    values (#{tabId,jdbcType=INTEGER}, #{tabParentId,jdbcType=INTEGER}, #{tabName,jdbcType=VARCHAR}, 
-      #{tabUrl,jdbcType=VARCHAR}, #{tabOreder,jdbcType=INTEGER}, #{createUsername,jdbcType=VARCHAR}, 
-      #{createTimestamp,jdbcType=TIMESTAMP}, #{updateUsername,jdbcType=VARCHAR}, #{updateTimestamp,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.leyao.web.entity.LeyaoWeb">
-    insert into leyao_web
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="tabId != null">
-        tab_id,
-      </if>
-      <if test="tabParentId != null">
-        tab_parent_id,
-      </if>
-      <if test="tabName != null">
-        tab_name,
-      </if>
-      <if test="tabUrl != null">
-        tab_url,
-      </if>
-      <if test="tabOreder != null">
-        tab_oreder,
-      </if>
-      <if test="createUsername != null">
-        create_username,
-      </if>
-      <if test="createTimestamp != null">
-        create_timestamp,
-      </if>
-      <if test="updateUsername != null">
-        update_username,
-      </if>
-      <if test="updateTimestamp != null">
-        update_timestamp,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="tabId != null">
-        #{tabId,jdbcType=INTEGER},
-      </if>
-      <if test="tabParentId != null">
-        #{tabParentId,jdbcType=INTEGER},
-      </if>
-      <if test="tabName != null">
-        #{tabName,jdbcType=VARCHAR},
-      </if>
-      <if test="tabUrl != null">
-        #{tabUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="tabOreder != null">
-        #{tabOreder,jdbcType=INTEGER},
-      </if>
-      <if test="createUsername != null">
-        #{createUsername,jdbcType=VARCHAR},
-      </if>
-      <if test="createTimestamp != null">
-        #{createTimestamp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateUsername != null">
-        #{updateUsername,jdbcType=VARCHAR},
-      </if>
-      <if test="updateTimestamp != null">
-        #{updateTimestamp,jdbcType=TIMESTAMP},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.leyao.web.entity.LeyaoWeb">
-    update leyao_web
-    <set>
-      <if test="tabParentId != null">
-        tab_parent_id = #{tabParentId,jdbcType=INTEGER},
-      </if>
-      <if test="tabName != null">
-        tab_name = #{tabName,jdbcType=VARCHAR},
-      </if>
-      <if test="tabUrl != null">
-        tab_url = #{tabUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="tabOreder != null">
-        tab_oreder = #{tabOreder,jdbcType=INTEGER},
-      </if>
-      <if test="createUsername != null">
-        create_username = #{createUsername,jdbcType=VARCHAR},
-      </if>
-      <if test="createTimestamp != null">
-        create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateUsername != null">
-        update_username = #{updateUsername,jdbcType=VARCHAR},
-      </if>
-      <if test="updateTimestamp != null">
-        update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP},
-      </if>
-    </set>
-    where tab_id = #{tabId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.leyao.web.entity.LeyaoWeb">
-    update leyao_web
-    set tab_parent_id = #{tabParentId,jdbcType=INTEGER},
-      tab_name = #{tabName,jdbcType=VARCHAR},
-      tab_url = #{tabUrl,jdbcType=VARCHAR},
-      tab_oreder = #{tabOreder,jdbcType=INTEGER},
-      create_username = #{createUsername,jdbcType=VARCHAR},
-      create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
-      update_username = #{updateUsername,jdbcType=VARCHAR},
-      update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP}
-    where tab_id = #{tabId,jdbcType=INTEGER}
-  </update>
+ <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
+  <id column="tab_id" jdbcType="INTEGER" property="tabId" />
+  <result column="tab_parent_id" jdbcType="INTEGER" property="tabParentId" />
+  <result column="tab_name" jdbcType="VARCHAR" property="tabName" />
+  <result column="tab_url" jdbcType="VARCHAR" property="tabUrl" />
+  <result column="tab_order" jdbcType="INTEGER" property="tabOrder" />
+  <result column="tab_length" jdbcType="INTEGER" property="tabLength" />
+  <result column="tab_width" jdbcType="INTEGER" property="tabWidth" />
+  <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+  <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+  <result column="create_timestamp" jdbcType="TIMESTAMP" property="createTimestamp" />
+  <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
+  <result column="update_timestamp" jdbcType="TIMESTAMP" property="updateTimestamp" />
+ </resultMap>
+ <sql id="Base_Column_List">
+  tab_id, tab_parent_id, tab_name, tab_url, tab_order, tab_length, tab_width, is_delete,
+  create_username,
+  create_timestamp, update_username, update_timestamp
+ </sql>
+ <select id="getPageUrls" resultMap="BaseResultMap" parameterType="java.util.Map">
+  select
+  <include refid="Base_Column_List" />
+  from leyao.leyao_web
+  <where>
+   is_delete = 0
+   <if test="tabId != null and tabId !=-1">
+    and tab_id = #{tabId,jdbcType=INTEGER}
+   </if>
+   <if test="tabParentId != null and tabParentId !=-1">
+    and tab_parent_id = #{tabParentId,jdbcType=INTEGER}
+   </if>
+  </where>
+  order by tab_order desc
+  <if test="start != null and start != -1">
+   limit #{start,jdbcType=INTEGER}, #{end,jdbcType=INTEGER}
+  </if>
+ </select>
+
+ <select id="getPageUrlsCount" resultType="java.lang.Integer" parameterType="java.util.Map">
+  select
+  count(1)
+  from leyao.leyao_web
+  <where>
+   is_delete = 0
+   <if test="tabId != null and tabId !=-1">
+    and tab_id = #{tabId,jdbcType=INTEGER}
+   </if>
+   <if test="tabParentId != null and tabParentId !=-1">
+    and tab_parent_id = #{tabParentId,jdbcType=INTEGER}
+   </if>
+  </where>
+ </select>
 </mapper>

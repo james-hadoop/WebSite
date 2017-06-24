@@ -11,7 +11,13 @@ public class LeyaoWeb {
 
     private String tabUrl;
 
-    private Integer tabOreder;
+    private Integer tabOrder;
+
+    private Integer tabLength;
+
+    private Integer tabWidth;
+
+    private Integer isDelete;
 
     private String createUsername;
 
@@ -53,12 +59,36 @@ public class LeyaoWeb {
         this.tabUrl = tabUrl;
     }
 
-    public Integer getTabOreder() {
-        return tabOreder;
+    public Integer getTabOrder() {
+        return tabOrder;
     }
 
-    public void setTabOreder(Integer tabOreder) {
-        this.tabOreder = tabOreder;
+    public void setTabOrder(Integer tabOrder) {
+        this.tabOrder = tabOrder;
+    }
+
+    public Integer getTabLength() {
+        return tabLength;
+    }
+
+    public void setTabLength(Integer tabLength) {
+        this.tabLength = tabLength;
+    }
+
+    public Integer getTabWidth() {
+        return tabWidth;
+    }
+
+    public void setTabWidth(Integer tabWidth) {
+        this.tabWidth = tabWidth;
+    }
+
+    public Integer getIsDelete() {
+        return isDelete;
+    }
+
+    public void setIsDelete(Integer isDelete) {
+        this.isDelete = isDelete;
     }
 
     public String getCreateUsername() {
