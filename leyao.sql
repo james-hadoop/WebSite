@@ -18,6 +18,6 @@ CREATE TABLE `leyao_web` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 insert into leyao.leyao_web
-(tab_id,tab_parent_id,tab_name,tab_url,tab_length,tab_width,is_delete)
+(tab_id,tab_parent_id,tab_name,tab_url,tab_order,tab_length,tab_width,is_delete)
 values
-(1,0,'1','1.url',800,600,0);
+(1,0,'1','1.url',1,800,600,0);
