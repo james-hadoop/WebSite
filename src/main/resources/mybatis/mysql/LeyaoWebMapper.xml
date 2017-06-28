@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.leyao.web.dao.mapper.LeyaoWebMapper">
- <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
-  <id column="tab_id" jdbcType="INTEGER" property="tabId" />
-  <result column="tab_parent_id" jdbcType="INTEGER" property="tabParentId" />
-  <result column="tab_name" jdbcType="VARCHAR" property="tabName" />
-  <result column="tab_url" jdbcType="VARCHAR" property="tabUrl" />
-  <result column="tab_order" jdbcType="INTEGER" property="tabOrder" />
-  <result column="tab_length" jdbcType="INTEGER" property="tabLength" />
-  <result column="tab_width" jdbcType="INTEGER" property="tabWidth" />
-  <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
-  <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
-  <result column="create_timestamp" jdbcType="TIMESTAMP" property="createTimestamp" />
-  <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
-  <result column="update_timestamp" jdbcType="TIMESTAMP" property="updateTimestamp" />
- </resultMap>
- <sql id="Base_Column_List">
-  tab_id, tab_parent_id, tab_name, tab_url, tab_order, tab_length, tab_width, is_delete,
-  create_username,
-  create_timestamp, update_username, update_timestamp
- </sql>
- <select id="getPageUrls" resultMap="BaseResultMap" parameterType="java.util.Map">
-  select
-  <include refid="Base_Column_List" />
-  from leyao.leyao_web
-  <where>
-   is_delete = 0
-   <if test="tabId != null and tabId !=-1">
-    and tab_id = #{tabId,jdbcType=INTEGER}
-   </if>
-   <if test="tabParentId != null and tabParentId !=-1">
-    and tab_parent_id = #{tabParentId,jdbcType=INTEGER}
-   </if>
-  </where>
-  order by tab_order desc
-  <if test="start != null and start != -1">
-   limit #{start,jdbcType=INTEGER}, #{end,jdbcType=INTEGER}
-  </if>
- </select>
+  <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
+    <id column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="item_parent_id" jdbcType="INTEGER" property="itemParentId" />
+    <result column="item_type" jdbcType="INTEGER" property="itemType" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="item_url" jdbcType="VARCHAR" property="itemUrl" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="item_length" jdbcType="INTEGER" property="itemLength" />
+    <result column="item_width" jdbcType="INTEGER" property="itemWidth" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+    <result column="create_timestamp" jdbcType="TIMESTAMP"
+      property="createTimestamp" />
+    <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
+    <result column="update_timestamp" jdbcType="TIMESTAMP"
+      property="updateTimestamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    item_id, item_parent_id, item_type, item_name, item_url,
+    item_order, item_length,
+    item_width, is_delete, create_username,
+    create_timestamp, update_username,
+    update_timestamp
+  </sql>
+  <select id="getItemUrls" resultMap="BaseResultMap"
+    parameterType="java.util.Map">
+    select
+    <include refid="Base_Column_List" />
+    from leyao.leyao_web
+    <where>
+      is_delete = 0
+      <if test="itemId != null and itemId !=-1">
+        and item_id = #{itemId,jdbcType=INTEGER}
+      </if>
+      <if test="itemParentId != null and itemParentId !=-1">
+        and item_parent_id = #{itemParentId,jdbcType=INTEGER}
+      </if>
+    </where>
+    order by item_order desc
+    <if test="start != null and start != -1">
+      limit #{start,jdbcType=INTEGER}, #{end,jdbcType=INTEGER}
+    </if>
+  </select>
 
- <select id="getPageUrlsCount" resultType="java.lang.Integer" parameterType="java.util.Map">
-  select
-  count(1)
-  from leyao.leyao_web
-  <where>
-   is_delete = 0
-   <if test="tabId != null and tabId !=-1">
-    and tab_id = #{tabId,jdbcType=INTEGER}
-   </if>
-   <if test="tabParentId != null and tabParentId !=-1">
-    and tab_parent_id = #{tabParentId,jdbcType=INTEGER}
-   </if>
-  </where>
- </select>
+  <select id="getItemUrlsCount" resultType="java.lang.Integer"
+    parameterType="java.util.Map">
+    select
+    count(1)
+    from leyao.leyao_web
+    <where>
+      is_delete = 0
+      <if test="itemId != null and itemId !=-1">
+        and item_id = #{itemId,jdbcType=INTEGER}
+      </if>
+      <if test="itemParentId != null and itemParentId !=-1">
+        and item_parent_id = #{itemParentId,jdbcType=INTEGER}
+      </if>
+    </where>
+  </select>
 </mapper>

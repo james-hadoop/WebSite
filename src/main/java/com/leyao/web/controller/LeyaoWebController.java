@@ -26,18 +26,16 @@ public class LeyaoWebController extends BaseController {
     @Autowired
     ILeyaoWebService leyaoWebService;
 
-    @RequestMapping(value = "/getPageUrlsWithoutPaging", method = RequestMethod.GET)
-    public List<String> getPageUrlsWithoutPaging(
-            @RequestParam(value = "clicked_page_id", defaultValue = "0") Integer clickedPageId,
-            @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
-        logger.info("/leyao_web/getPageUrlsWithoutPaging() called: clicked_page_id={}", clickedPageId);
-        List<String> listPageUrls = new ArrayList<String>();
+    @RequestMapping(value = "/getItemUrlsWithoutPaging", method = RequestMethod.GET)
+    public List<String> getItemUrlsWithoutPaging(@RequestParam(value = "parent_item_id", defaultValue = "0") Integer parentItemId, @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
+        logger.info("/leyao_web/getItemUrlsWithoutPaging() called: parent_item_id={}", parentItemId);
+        List<String> listItemUrls = new ArrayList<String>();
 
         try {
             Map<String, Object> paramMap = new HashMap<String, Object>();
-            paramMap.put("tabParentId", clickedPageId);
+            paramMap.put("tabParentId", parentItemId);
 
-            List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getPageUrls(paramMap);
+            List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getItemUrls(paramMap);
             if (null != listLeyaoWeb && 0 != listLeyaoWeb.size()) {
                 int resultSize = rows;
                 for (LeyaoWeb leyaoWeb : listLeyaoWeb) {
@@ -46,22 +44,21 @@ public class LeyaoWebController extends BaseController {
                         // of "rows" parameter
                         break;
                     }
-                    listPageUrls.add(leyaoWeb.getTabUrl());
+                    listItemUrls.add(leyaoWeb.getItemUrl());
                 }
             }
 
-            return listPageUrls;
+            return listItemUrls;
         } catch (Exception e) {
-            logger.error("/leyao_web/getPageUrlsWithoutPaging()", e);
-            return listPageUrls;
+            logger.error("/leyao_web/getItemUrlsWithoutPaging()", e);
+            return listItemUrls;
         }
     }
 
-    @RequestMapping(value = "/getPageUrls", method = RequestMethod.GET)
-    public GridContent getPageUrls(@RequestParam(value = "page", defaultValue = "1") Integer page,
-            @RequestParam(value = "rows", defaultValue = "10") Integer rows,
-            @RequestParam(value = "clicked_page_id", defaultValue = "0") Integer clickedPageId) {
-        logger.info("/leyao_web/getPageUrls() called: clicked_page_id={}, page={}, rows={}", clickedPageId, page, rows);
+    @RequestMapping(value = "/getItemUrls", method = RequestMethod.GET)
+    public GridContent getItemUrls(@RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "rows", defaultValue = "10") Integer rows,
+                    @RequestParam(value = "parent_item_id", defaultValue = "-1") Integer parentItemId) {
+        logger.info("/leyao_web/getItemUrls() called: parent_item_id={}, page={}, rows={}", parentItemId, page, rows);
         GridContent gridcontent = new GridContent();
 
         try {
@@ -69,17 +66,17 @@ public class LeyaoWebController extends BaseController {
             int end = rows;
 
             Map<String, Object> paramMap = new HashMap<String, Object>();
-            paramMap.put("tabParentId", clickedPageId);
+            paramMap.put("itemParentId", parentItemId);
             paramMap.put("start", start);
             paramMap.put("end", end);
 
-            List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getPageUrls(paramMap);
-            int count = leyaoWebService.getPageUrlsCount(paramMap);
+            List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getItemUrls(paramMap);
+            int count = leyaoWebService.getItemUrlsCount(paramMap);
 
             gridcontent.setRows(listLeyaoWeb);
             gridcontent.setTotal(count);
         } catch (Exception e) {
-            logger.error("/leyao_web/getPageUrls()", e);
+            logger.error("/leyao_web/getItemUrls()", e);
             return gridcontent;
         }
 

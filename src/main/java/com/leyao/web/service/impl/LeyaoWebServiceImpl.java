@@ -16,12 +16,12 @@ public class LeyaoWebServiceImpl implements ILeyaoWebService {
     LeyaoWebMapper leyaoWebMapper;
 
     @Override
-    public List<LeyaoWeb> getPageUrls(Map<String, Object> paramMap) {
-        return leyaoWebMapper.getPageUrls(paramMap);
+    public List<LeyaoWeb> getItemUrls(Map<String, Object> paramMap) {
+        return leyaoWebMapper.getItemUrls(paramMap);
     }
 
     @Override
-    public int getPageUrlsCount(Map<String, Object> paramMap) {
-        return leyaoWebMapper.getPageUrlsCount(paramMap);
+    public int getItemUrlsCount(Map<String, Object> paramMap) {
+        return leyaoWebMapper.getItemUrlsCount(paramMap);
     }
 }

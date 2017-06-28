@@ -8,7 +8,7 @@ import com.leyao.web.entity.LeyaoWeb;
 
 @MybatisMapper
 public interface LeyaoWebMapper {
-    List<LeyaoWeb> getPageUrls(Map<String, Object> paramMap);
+    List<LeyaoWeb> getItemUrls(Map<String, Object> paramMap);
 
-    int getPageUrlsCount(Map<String, Object> paramMap);
+    int getItemUrlsCount(Map<String, Object> paramMap);
 }

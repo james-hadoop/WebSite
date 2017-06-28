@@ -3,19 +3,21 @@ package com.leyao.web.entity;
 import java.util.Date;
 
 public class LeyaoWeb {
-    private Integer tabId;
+    private Integer itemId;
 
-    private Integer tabParentId;
+    private Integer itemParentId;
 
-    private String tabName;
+    private Integer itemType;
 
-    private String tabUrl;
+    private String itemName;
 
-    private Integer tabOrder;
+    private String itemUrl;
 
-    private Integer tabLength;
+    private Integer itemOrder;
 
-    private Integer tabWidth;
+    private Integer itemLength;
+
+    private Integer itemWidth;
 
     private Integer isDelete;
 
@@ -27,60 +29,68 @@ public class LeyaoWeb {
 
     private Date updateTimestamp;
 
-    public Integer getTabId() {
-        return tabId;
+    public Integer getItemId() {
+        return itemId;
     }
 
-    public void setTabId(Integer tabId) {
-        this.tabId = tabId;
+    public void setItemId(Integer itemId) {
+        this.itemId = itemId;
     }
 
-    public Integer getTabParentId() {
-        return tabParentId;
+    public Integer getItemParentId() {
+        return itemParentId;
     }
 
-    public void setTabParentId(Integer tabParentId) {
-        this.tabParentId = tabParentId;
+    public void setItemParentId(Integer itemParentId) {
+        this.itemParentId = itemParentId;
     }
 
-    public String getTabName() {
-        return tabName;
+    public Integer getItemType() {
+        return itemType;
     }
 
-    public void setTabName(String tabName) {
-        this.tabName = tabName;
+    public void setItemType(Integer itemType) {
+        this.itemType = itemType;
     }
 
-    public String getTabUrl() {
-        return tabUrl;
+    public String getItemName() {
+        return itemName;
     }
 
-    public void setTabUrl(String tabUrl) {
-        this.tabUrl = tabUrl;
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
-    public Integer getTabOrder() {
-        return tabOrder;
+    public String getItemUrl() {
+        return itemUrl;
     }
 
-    public void setTabOrder(Integer tabOrder) {
-        this.tabOrder = tabOrder;
+    public void setItemUrl(String itemUrl) {
+        this.itemUrl = itemUrl;
     }
 
-    public Integer getTabLength() {
-        return tabLength;
+    public Integer getItemOrder() {
+        return itemOrder;
     }
 
-    public void setTabLength(Integer tabLength) {
-        this.tabLength = tabLength;
+    public void setItemOrder(Integer itemOrder) {
+        this.itemOrder = itemOrder;
     }
 
-    public Integer getTabWidth() {
-        return tabWidth;
+    public Integer getItemLength() {
+        return itemLength;
     }
 
-    public void setTabWidth(Integer tabWidth) {
-        this.tabWidth = tabWidth;
+    public void setItemLength(Integer itemLength) {
+        this.itemLength = itemLength;
+    }
+
+    public Integer getItemWidth() {
+        return itemWidth;
+    }
+
+    public void setItemWidth(Integer itemWidth) {
+        this.itemWidth = itemWidth;
     }
 
     public Integer getIsDelete() {
