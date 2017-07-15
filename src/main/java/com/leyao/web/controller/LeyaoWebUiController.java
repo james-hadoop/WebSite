@@ -10,9 +10,9 @@ import com.leyao.web.controller.base.BaseController;
 @RestController
 @RequestMapping("/leyao_web_ui")
 public class LeyaoWebUiController extends BaseController {
-    @RequestMapping(value = "/index_page", method = RequestMethod.GET)
-    public ModelAndView index() {
-        System.out.println("index() called...");
-        return new ModelAndView("Leyao/index");
-    }
+	@RequestMapping(value = "/index_page", method = RequestMethod.GET)
+	public ModelAndView index() {
+		System.out.println("index() called...");
+		return new ModelAndView("Leyao/index");
+	}
 }

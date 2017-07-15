@@ -17,9 +17,8 @@ CREATE table `leyao_web` (
   PRIMARY KEY (`item_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-insert into leyao.leyao_web
-(item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete)
-values
-(1,0,1,'1.pic','1.pic.url',1,800,600,0),
-(2,1,2,'2.audio','2.audio.url',1,null,null,0),
-(3,1,2,'3.vedio','3.vedio.url',1,null,null,0);
+INSERT INTO `leyao_web`(`item_id`, `item_parent_id`, `item_type`, `item_name`, `item_url`, `item_order`, `item_length`, `item_width`, `is_delete`, `create_username`, `create_timestamp`, `update_username`, `update_timestamp`) VALUES (1, 0, 1, 'lunbo1.jpg', 'lunbo1.jpg', 1, 4482, 2296, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `leyao_web`(`item_id`, `item_parent_id`, `item_type`, `item_name`, `item_url`, `item_order`, `item_length`, `item_width`, `is_delete`, `create_username`, `create_timestamp`, `update_username`, `update_timestamp`) VALUES (2, 0, 1, 'lunbo2.jpg', 'lunbo2.jpg', 2, 4482, 2296, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `leyao_web`(`item_id`, `item_parent_id`, `item_type`, `item_name`, `item_url`, `item_order`, `item_length`, `item_width`, `is_delete`, `create_username`, `create_timestamp`, `update_username`, `update_timestamp`) VALUES (3, 0, 1, 'lunbo3.jpg', 'lunbo3.jpg', 3, 4482, 2296, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `leyao_web`(`item_id`, `item_parent_id`, `item_type`, `item_name`, `item_url`, `item_order`, `item_length`, `item_width`, `is_delete`, `create_username`, `create_timestamp`, `update_username`, `update_timestamp`) VALUES (4, 0, 1, 'lunbo4.jpg', 'lunbo4.jpg', 4, 4482, 2296, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `leyao_web`(`item_id`, `item_parent_id`, `item_type`, `item_name`, `item_url`, `item_order`, `item_length`, `item_width`, `is_delete`, `create_username`, `create_timestamp`, `update_username`, `update_timestamp`) VALUES (5, 0, 1, 'lunbo5.jpg', 'lunbo5.jpg', 5, 4482, 2296, 0, NULL, NULL, NULL, NULL);
