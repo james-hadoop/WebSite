@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <html>
@@ -120,3 +121,10 @@
 
 </body>
 </html>
+=======
+<html>
+<body>
+<h2>Hello Leyao!</h2>
+</body>
+</html>
+>>>>>>> bf03e828e49b7e1ce3493c84b656293d7bc058ef
