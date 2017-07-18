@@ -27,13 +27,15 @@ public class LeyaoWebController extends BaseController {
     ILeyaoWebService leyaoWebService;
 
     @RequestMapping(value = "/getItemUrlsWithoutPaging", method = RequestMethod.GET)
-    public List<String> getItemUrlsWithoutPaging(@RequestParam(value = "parent_item_id", defaultValue = "0") Integer parentItemId, @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
-        logger.info("/leyao_web/getItemUrlsWithoutPaging() called: parent_item_id={}", parentItemId);
+    public List<String> getItemUrlsWithoutPaging(@RequestParam(value = "parent_item_id", defaultValue = "0") Integer itemParentId,
+                    @RequestParam(value = "item_type", defaultValue = "-1") Integer itemType, @RequestParam(value = "rows", defaultValue = "10") Integer rows) {
+        logger.info("/leyao_web/getItemUrlsWithoutPaging() called: parent_item_id={}, item_type={}", itemParentId, itemType);
         List<String> listItemUrls = new ArrayList<String>();
 
         try {
             Map<String, Object> paramMap = new HashMap<String, Object>();
-            paramMap.put("tabParentId", parentItemId);
+            paramMap.put("itemParentId", itemParentId);
+            paramMap.put("itemType", itemType);
 
             List<LeyaoWeb> listLeyaoWeb = leyaoWebService.getItemUrls(paramMap);
             if (null != listLeyaoWeb && 0 != listLeyaoWeb.size()) {
@@ -57,8 +59,8 @@ public class LeyaoWebController extends BaseController {
 
     @RequestMapping(value = "/getItemUrls", method = RequestMethod.GET)
     public GridContent getItemUrls(@RequestParam(value = "page", defaultValue = "1") Integer page, @RequestParam(value = "rows", defaultValue = "10") Integer rows,
-                    @RequestParam(value = "parent_item_id", defaultValue = "-1") Integer parentItemId) {
-        logger.info("/leyao_web/getItemUrls() called: parent_item_id={}, page={}, rows={}", parentItemId, page, rows);
+                    @RequestParam(value = "parent_item_id", defaultValue = "-1") Integer itemParentId, @RequestParam(value = "item_type", defaultValue = "-1") Integer itemType) {
+        logger.info("/leyao_web/getItemUrls() called: parent_item_id={}, item_type={}, page={}, rows={}", itemParentId, itemType, page, rows);
         GridContent gridcontent = new GridContent();
 
         try {
@@ -66,7 +68,8 @@ public class LeyaoWebController extends BaseController {
             int end = rows;
 
             Map<String, Object> paramMap = new HashMap<String, Object>();
-            paramMap.put("itemParentId", parentItemId);
+            paramMap.put("itemParentId", itemParentId);
+            paramMap.put("itemType", itemType);
             paramMap.put("start", start);
             paramMap.put("end", end);
 

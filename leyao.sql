@@ -3,7 +3,7 @@ DROP table IF EXISTS `leyao_web`;
 CREATE table `leyao_web` (
   `item_id` int NOT NULL AUTO_INCREMENT,
   `item_parent_id` int NOT NULL DEFAULT 0,
-  `item_type` int NOT NULL DEFAULT 1 COMMENT '1:picture; 2:audio; 3:vedio',
+  `item_type` int NOT NULL DEFAULT 1 COMMENT '1:item; 2:header; 3:footer; 4:audio; 5:vedio',
   `item_name` VARCHAR(50) NOT NULL DEFAULT '?',
   `item_url` VARCHAR(100) NOT NULL DEFAULT '?',
   `item_order` int NOT NULL DEFAULT -1,
