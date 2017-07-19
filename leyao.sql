@@ -18,38 +18,37 @@ CREATE table `leyao_web` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES 
-(1,0,2,'h1.jpg','header/h1.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
-,(2,0,2,'h2.jpg','header/h2.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
-,(3,0,2,'h3.jpg','header/h3.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
-,(4,0,1,'item_list1','header/item_list1.jpg',5,4482,2800,0,NULL,NULL,NULL,NULL)
-,(5,0,1,'item_list6','item_list/item_list6.jpg',4,720,400,0,NULL,NULL,NULL,NULL)
-,(6,0,1,'item_list7','item_list/item_list7.jpg',3,720,400,0,NULL,NULL,NULL,NULL)
-,(7,0,1,'item_list8','item_list/item_list8.jpg',2,720,400,0,NULL,NULL,NULL,NULL)
-,(8,0,1,'item_list9','item_list/item_list9.jpg',1,720,400,0,NULL,NULL,NULL,NULL)
+(1,0,2,'h1','header/h1.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
+,(2,0,2,'h2','header/h2.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
+,(3,0,2,'h3','header/h3.jpg',1,72,44,0,NULL,NULL,NULL,NULL)
+,(4,0,1,'item_list1','item_list/item_list1.jpg',5,4482,2800,0,NULL,NULL,NULL,NULL)
+,(5,0,1,'item_list6','item_list/item_list6.jpg',0,720,400,0,NULL,NULL,NULL,NULL)
+,(6,0,1,'item_list7','item_list/item_list7.jpg',4,720,400,0,NULL,NULL,NULL,NULL)
+,(7,0,1,'item_list8','item_list/item_list8.jpg',3,720,400,0,NULL,NULL,NULL,NULL)
+,(8,0,1,'item_list9','item_list/item_list9.jpg',2,720,400,0,NULL,NULL,NULL,NULL)
 ,(9,0,3,'f1','footer/f1.jpg',1,950,300,0,NULL,NULL,NULL,NULL)
 ,(10,1,1,'item1','items/item1.jpg',1,950,1200,0,NULL,NULL,NULL,NULL)
 ;
 INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES 
 (11,1,1,'item2','items/item2.jpg',1,950,1200,0,NULL,NULL,NULL,NULL)
-,(12,3,1,'item3','items/item3.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(13,3,1,'item4','items/item4.jpg',1,950,1200,0,NULL,NULL,NULL,NULL)
+,(12,4,1,'item4','items/item4.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(13,3,1,'item3','items/item3.jpg',1,950,1200,0,NULL,NULL,NULL,NULL)
 ,(14,4,1,'item5','items/item5.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(15,5,1,'item6','items/item6.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(16,6,1,'item7','items/item7.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(17,7,1,'item8','items/item8.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(18,0,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(15,6,1,'item6','items/item6.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(16,7,1,'item7','items/item7.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(17,8,1,'item8','items/item8.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(18,29,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(19,2,1,'item_list11','item_list/item_list11.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(20,2,1,'item_list12','item_list/item_list12.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
 ;
 INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES 
-(19,2,1,'item11','items/item11.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
-,(20,2,1,'item12','items/item12.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
-,(21,2,1,'item13','items/item13.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
-,(22,2,1,'item14','items/item14.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
-,(23,2,1,'item15','items/item15.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
-;
-
-INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES
-(24,19,1,'item5','items/item5.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+(21,2,1,'item_list13','item_list/item_list13.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(22,2,1,'item_list14','item_list/item_list14.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(23,2,1,'item_list15','item_list/item_list15.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(24,19,1,'item5','items/item5.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
 ,(25,20,1,'item6','items/item6.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
 ,(26,21,1,'item7','items/item7.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
 ,(27,22,1,'item8','items/item8.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
-,(28,23,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL);
+,(28,23,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(29,0,1,'item_list10','item_list/item_list10.jpg',1,720,400,0,NULL,NULL,NULL,NULL)
+;
