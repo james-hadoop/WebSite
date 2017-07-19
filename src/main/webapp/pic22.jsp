@@ -81,9 +81,8 @@
     // error选项：Ajax请求失败后的回调函数
     // async选项：指定当前Ajax请求是否异步
     // 默认值为true（表示为异步）
-    $.ajax("pic22.txt", {
+    $.ajax("temp/pic22.txt", {
       type : "GET",
-      data : "this is pic22",
       dataType : "text",
       success : function(data, textStatus){
         // data：服务器端响应数据，数据格式是由上面的dataType指定的
