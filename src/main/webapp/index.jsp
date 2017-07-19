@@ -206,7 +206,7 @@
                                 id : data.rows[index].itemId
                             });
                             $(this).attr({
-                                src : 'image/' + data.rows[index + 1].itemUrl
+                                src : 'image/' + data.rows[index+1].itemUrl
                             });
                         });
 
