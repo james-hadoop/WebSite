@@ -83,7 +83,7 @@
     // error选项：Ajax请求失败后的回调函数
     // async选项：指定当前Ajax请求是否异步
     // 默认值为true（表示为异步）
-    $.ajax("shijianliebiao.txt", {
+    $.ajax("temp/shijianliebiao.txt", {
       type : "GET",
       data : "this is shijian",
       dataType : "text",
