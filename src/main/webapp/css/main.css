@@ -25,7 +25,8 @@ body
   font-family:"Apple San Francisco","Helvetica Neue","Helvetica","Arial",sans-serif;
   color:#888;
   font-style: normal;
-  background-color:#f2f2f2;
+  /*background-color:#f2f2f2;*/
+  background-color:#ffffff;
 }
 .my-navbar .box .item img
 {

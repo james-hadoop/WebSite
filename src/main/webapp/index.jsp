@@ -39,7 +39,7 @@
  <div class="container-fluid" style="padding: 0;">
   <div class="row my-main1">
    <div class="col-xs-12">
-    <a href="shijian1.html"><img id="lunbo1" " class="img-responsive"></a>
+    <a href="shijian1.html"><img id="lunbo1" class="img-responsive"></a>
    </div>
   </div>
 
@@ -105,16 +105,16 @@
 
   <div class="row my-main2">
    <div class="col-md-3 col-sm-6 col-xs-12">
-    <a id="my-img2-1" href="items.jsp"><img src="" class="img-responsive lunbo"></a>
+    <a id="my-img2-1" href="items.jsp"><img src="" class="img-responsive items"></a>
    </div>
    <div class="col-md-3 col-sm-6 col-xs-12">
-    <a id="my-img2-2" href="items.jsp"><img src="" class="img-responsive lunbo"></a>
+    <a id="my-img2-2" href="items.jsp"><img src="" class="img-responsive items"></a>
    </div>
    <div class="col-md-3 col-sm-6 col-xs-12">
-    <a id="my-img2-3" href="items.jsp"><img src="" class="img-responsive lunbo"></a>
+    <a id="my-img2-3" href="items.jsp"><img src="" class="img-responsive items"></a>
    </div>
    <div class="col-md-3 col-sm-6 col-xs-12">
-    <a id="my-img2-4" href="items.jsp"><img src="" class="img-responsive lunbo"></a>
+    <a id="my-img2-4" href="items.jsp"><img src="" class="img-responsive items"></a>
    </div>
   </div>
  </div>
@@ -130,7 +130,8 @@
  <script>
 		function myAjax() {
 			var getData = {
-				parent_item_id : 0
+				parent_item_id : 0,
+				item_type:1
 			};
 
 			// $.ajax( url, [setting] )方法
@@ -153,7 +154,8 @@
 						type : "GET",
 						data : getData,
 						dataType : "json",
-						success : function(data, textStatus) {
+						success : function(data, textStatus) {   
+						    
 							/*	if(0==eval("(" + data + ")")['total']){
 								return;
 							}
@@ -168,22 +170,35 @@
 							
 							oLunbo1.setAttribute('src', sLunbo1);
 							aUrls.shift(); */
-
 							for ( var key in data.rows) {
 								if (0 == key) {
 									var oLunbo1 = document
 											.getElementById("lunbo1");
 									var row = data.rows[key];
+									console.info(row);
 									var sLunbo1 = 'image/' + row.itemUrl;
+									
 									oLunbo1.setAttribute('src', sLunbo1);
+									oLunbo1.setAttribute('id', row.itemId);
 								}else{
 								var row = data.rows[key];
 								var oImg = document
-										.getElementsByClassName("lunbo")[key-1];
+										.getElementsByClassName("items")[key-1];
 								var sSrc = 'image/' + row.itemUrl;
-								oImg.setAttribute('src', sSrc);
+								//oImg.setAttribute('src', sSrc);
+								//oImg.setAttribute('id', row.itemId);
 								}
 							}
+							
+							$("#lunbo1").attr({id:"hello"});
+							
+							
+							
+							  $(".items").each(function(index, value) {
+							      $(this).attr({id:data.rows[index].itemId});
+							      $(this).attr({src:'image/' +data.rows[index+1].itemUrl});
+							      $(this).attr({href:'items.jsp'});
+							  });
 
 							/*           for(var i=0;i<aUrls.length;i++){
 							 var oImg = document.getElementsByClassName("lunbo")[i];
@@ -206,6 +221,13 @@
 					});
 		}
 	</script>
+  
+  <script type="text/javascript">
+/*   $(".lunbo").each(function() {
+      console.info($(this)); 
+  });*/
+  
+  </script>
 </body>
 
 <%@ include file="footer.jsp"%>
