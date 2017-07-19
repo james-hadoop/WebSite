@@ -20,7 +20,7 @@
         var parentItemId = $('#parent_item_id').val();
 
         var getData = {
-            parent_item_id :1,
+            parent_item_id :2,
             item_type : 1
         };
 
@@ -34,10 +34,11 @@
                 for ( var index in data.rows) {
                     var row = data.rows[index];
                     var imageUrl = 'image/' + row.itemUrl;
+                    var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
                     console.info(row);
                     console.info(imageUrl);
 
-                    var htmlString = "<div class=\"col-sm-6 col-xs-12\"><img src=\""+imageUrl+"\" class=\"img-responsive\"></div>";
+                    var htmlString = "<div class=\"col-sm-6 col-xs-12\"><a href="+targetUrl+"><img src=\""+imageUrl+"\" class=\"img-responsive\"></a></div>";
                     $(".my-music").after(htmlString);
                 }
             },

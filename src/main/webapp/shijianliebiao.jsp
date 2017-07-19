@@ -39,15 +39,10 @@
   <div class="row inside">
     <div class="col-xs-12">
       <div class="row my-music">
-
       </div>
-
     </div>
   </div>
-
 </div>
-
-
 
 <div class="my-footer">
   <div class="box2">

@@ -39,3 +39,17 @@ INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url
 ,(17,7,1,'item8','items/item8.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
 ,(18,0,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
 ;
+INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES 
+(19,2,1,'item11','items/item11.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(20,2,1,'item12','items/item12.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(21,2,1,'item13','items/item13.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(22,2,1,'item14','items/item14.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+,(23,2,1,'item15','items/item15.jpg',1,950,950,0,NULL,NULL,NULL,NULL)
+;
+
+INSERT INTO leyao.leyao_web (item_id,item_parent_id,item_type,item_name,item_url,item_order,item_length,item_width,is_delete,create_username,create_timestamp,update_username,update_timestamp) VALUES
+(24,19,1,'item5','items/item5.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(25,20,1,'item6','items/item6.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(26,21,1,'item7','items/item7.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(27,22,1,'item8','items/item8.jpg',1,950,1500,0,NULL,NULL,NULL,NULL)
+,(28,23,1,'item9','items/item9.jpg',1,950,1500,0,NULL,NULL,NULL,NULL);

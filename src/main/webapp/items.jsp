@@ -50,7 +50,9 @@
 </head>
 <body>
 <%@ include file="header.jsp"%>
+
   <input type="hidden" id="parent_item_id" value=<%=parentItemId%> />
+  
   <div class="container outside">
     <div class="row inside">
       <div class="col-xs-12">
@@ -58,6 +60,7 @@
       </div>
     </div>
   </div>
+  
   <%@ include file="footer.jsp"%>
 </body>
 </html>
