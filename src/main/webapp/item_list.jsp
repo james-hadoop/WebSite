@@ -29,14 +29,10 @@
             data : getData,
             dataType : "json",
             success : function(data, textStatus) {
-                console.info(data);
-
                 for ( var index in data.rows) {
                     var row = data.rows[index];
                     var imageUrl = 'image/' + row.itemUrl;
                     var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
-                    console.info(row);
-                    console.info(imageUrl);
 
                     var htmlString = "<div class=\"col-sm-6 col-xs-12\"><a href="+targetUrl+"><img src=\""+imageUrl+"\" class=\"img-responsive\"></a></div>";
                     $(".my-music").after(htmlString);

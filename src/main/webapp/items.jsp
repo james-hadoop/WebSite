@@ -2,7 +2,6 @@
   pageEncoding="UTF-8"%>
 <%
     String parentItemId = request.getParameter("parent_item_id");
-			System.out.println("parentItemId=" + parentItemId);
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -29,13 +28,9 @@
             data : getData,
             dataType : "json",
             success : function(data, textStatus) {
-                console.info(data);
-
                 for ( var index in data.rows) {
                     var row = data.rows[index];
                     var imageUrl = 'image/' + row.itemUrl;
-                    console.info(row);
-                    console.info(imageUrl);
 
                     var htmlString = "<img src=\""+imageUrl+"\" class=\"img-responsive\">";
                     $(".image-container").after(htmlString);

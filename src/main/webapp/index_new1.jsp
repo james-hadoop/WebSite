@@ -7,57 +7,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title></title>
 
-<!--<link href="/" rel="icon">-->
-<!--todo 标签图标是否只能用ico格式-->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet">
-<!--[if lt IE 9]>
+
+  <!--<link href="/" rel="icon">-->
+  <!--todo 标签图标是否只能用ico格式-->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <!--[if lt IE 9]>
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
   <![endif]-->
-
-<script src="js/jquery-1.11.3.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script>
-    $(function() {
-        var getData = {
-            parent_item_id : 0,
-            item_type : 1
-        };
-
-        $.ajax("leyao_web/getItemUrls", {
-            type : "GET",
-            data : getData,
-            dataType : "json",
-            success : function(data, textStatus) {
-                $(".items").each(function(index, value) {
-                    $(this).attr({
-                        id : data.rows[index].itemId
-                    });
-                    $(this).attr({
-                        src : 'image/' + data.rows[index].itemUrl
-                    });
-                });
-                
-                $(".items_a").each(function(index, value) {
-                    var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
-                    console.info('targetUrl=' + targetUrl);
-                    $(this).attr({
-                        href : targetUrl
-                    });
-                });
-            },
-            error : function(XMLHttpRequest, textStatus, errorThrown) {
-                alert(textStatus);//error
-                alert(XMLHttpRequest.status);//404
-            }
-        });
-    });
-</script>
 </head>
 <body>
-  <%@ include file="header.jsp"%>
+  <div class="my-navbar">
+    <div class="box1">
+      <span class="item"><a href="index.html"><img src="image/apple.svg"/></a></span>
+      <span class="item"><a href='guihua.html'><img src="" alt="规划"/></a></span>
+      <span class="item"><a href='shijianliebiao.html'><img src="" alt="事件"/></a></span>
+      <span class="item"><a href='guanyu.html'><img src="" alt="关于"/></a></span>
+      <button style="display:none;">
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+
 
   <div class="container-fluid" style="padding:0;">
     <!--<div class="row my-main1">-->
@@ -75,7 +47,7 @@
 
             <div class="item active">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <img class="items" src="">
               </a>
 
               <!--<div class="carousel-caption">-->
@@ -85,22 +57,22 @@
             </div>
             <div class="item">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
-              </a>
-            </div>
-            <div class="item">
-              <a class="items_a" >
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <img class="items" src="">
               </a>
             </div>
             <div class="item">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <img class="items" src="">
               </a>
             </div>
             <div class="item">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <img class="items" src="">
+              </a>
+            </div>
+            <div class="item">
+              <a class="items_a">
+                <img class="items" src="">
               </a>
             </div>
 
@@ -124,24 +96,42 @@
         </div>
       </div>
     </div>
-    
-   <div class="row my-main2">
+
+
+
+    <div class="row my-main2">
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <a class="items_a"><img src="" class="img-responsive items"></a>
+        <a id="my-img2-1" href="pic21.html"><img src="image/jfk_large_2x.jpg" class="img-responsive"></a>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <a class="items_a"><img src="" class="img-responsive items"></a>
+        <a id="my-img2-2" href="pic22.html"><img src="image/wwdc17_large_2x.jpg" class="img-responsive"></a>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <a class="items_a"><img src="" class="img-responsive items"></a>
+        <a id="my-img2-3" href="pic23.html"><img src="image/watch_large_2x.jpg" class="img-responsive"></a>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <a i class="items_a"><img src=""
-          class="img-responsive items"></a>
+        <a id="my-img2-4" href="pic24.html"><img src="image/ipad_large_2x.jpg" class="img-responsive"></a>
       </div>
     </div>
+  </div>
+
+  <div class="my-footer">
+    <div class="box2">
+      <div class="item footer1"><img src="image/apple.svg"/></div>
+      <div class="item footer1" style="color:#888;">
+        <p>中国 上海 静安区万荣路700好A3幢环上大影视园区</p>
+        <p>Building A3, No.700, WanRong Road, JingAn District, Shanghai, China</p>
+        <p>leyaomusic@164.com</p>
+      </div>
     </div>
-    
-    <%@ include file="footer.jsp"%>
+  </div>
+
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
