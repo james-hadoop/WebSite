@@ -31,6 +31,11 @@
             data : getData,
             dataType : "json",
             success : function(data, textStatus) {
+                if (data.total == 0) {
+                    alert("No resouces found!");
+                    return;
+                }
+
                 $(".items").each(function(index, value) {
                     $(this).attr({
                         id : data.rows[index].itemId
@@ -39,7 +44,7 @@
                         src : 'image/' + data.rows[index].itemUrl
                     });
                 });
-                
+
                 $(".items_a").each(function(index, value) {
                     var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
                     console.info('targetUrl=' + targetUrl);
@@ -59,23 +64,27 @@
 <body>
   <%@ include file="header.jsp"%>
 
-  <div class="container-fluid" style="padding:0;">
+  <div class="container-fluid" style="padding: 0;">
     <!--<div class="row my-main1">-->
-      <!--<div class="col-xs-12">-->
-        <!--<a href="pic1-flex.html"><img src="image/iphone_alt_large_2x.jpg" class="img-responsive"></a>-->
-      <!--</div>-->
+    <!--<div class="col-xs-12">-->
+    <!--<a href="pic1-flex.html"><img src="image/iphone_alt_large_2x.jpg" class="img-responsive"></a>-->
+    <!--</div>-->
     <!--</div>-->
 
     <div class="row my-main1">
       <div class="col-xs-12">
-        <div class="carousel slide" id="my-carousel" data-ride="carousel" data-interval="2000">
+        <div class="carousel slide" id="my-carousel"
+          data-ride="carousel" data-interval="2000">
 
           <!--必须： 轮播广告内容-->
-          <div class="carousel-inner"><!--必须，有且只有一个-->
+          <div class="carousel-inner">
+            <!--必须，有且只有一个-->
 
             <div class="item active">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <p style="text-align: center;">
+                  <img class="items" src="">
+                </p>
               </a>
 
               <!--<div class="carousel-caption">-->
@@ -85,47 +94,57 @@
             </div>
             <div class="item">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
-              </a>
-            </div>
-            <div class="item">
-              <a class="items_a" >
-                <p style="text-align: center;"><img class="items" src=""></p>
-              </a>
-            </div>
-            <div class="item">
-              <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <p style="text-align: center;">
+                  <img class="items" src="">
+                </p>
               </a>
             </div>
             <div class="item">
               <a class="items_a">
-                <p style="text-align: center;"><img class="items" src=""></p>
+                <p style="text-align: center;">
+                  <img class="items" src="">
+                </p>
+              </a>
+            </div>
+            <div class="item">
+              <a class="items_a">
+                <p style="text-align: center;">
+                  <img class="items" src="">
+                </p>
+              </a>
+            </div>
+            <div class="item">
+              <a class="items_a">
+                <p style="text-align: center;">
+                  <img class="items" src="">
+                </p>
               </a>
             </div>
 
           </div>
           <!--引导器，就是三个小圆圈-->
           <ul class="carousel-indicators">
-            <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#my-carousel" data-slide-to="0"
+              class="active"></li>
             <li data-target="#my-carousel" data-slide-to="1"></li>
             <li data-target="#my-carousel" data-slide-to="2"></li>
             <li data-target="#my-carousel" data-slide-to="3"></li>
             <li data-target="#my-carousel" data-slide-to="4"></li>
           </ul>
           <!--控制箭头-->
-          <a href="#my-carousel" class="carousel-control left" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-          </a>
-          <a href="#my-carousel" class="carousel-control right" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
+          <a href="#my-carousel" class="carousel-control left"
+            data-slide="prev"> <span
+            class="glyphicon glyphicon-chevron-left"></span>
+          </a> <a href="#my-carousel" class="carousel-control right"
+            data-slide="next"> <span
+            class="glyphicon glyphicon-chevron-right"></span>
           </a>
 
         </div>
       </div>
     </div>
-    
-   <div class="row my-main2">
+
+    <div class="row my-main2">
       <div class="col-md-3 col-sm-6 col-xs-12">
         <a class="items_a"><img src="" class="img-responsive items"></a>
       </div>
@@ -140,8 +159,8 @@
           class="img-responsive items"></a>
       </div>
     </div>
-    </div>
-    
-    <%@ include file="footer.jsp"%>
+  </div>
+
+  <%@ include file="footer.jsp"%>
 </body>
 </html>
