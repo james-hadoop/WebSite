@@ -31,7 +31,7 @@ INSERT INTO `leyao_web` VALUES (11, 1, 1, 'item2', 'items/item2.jpg', 1, 950, 12
 INSERT INTO `leyao_web` VALUES (12, 3, 1, 'item4', 'items/item4.jpg', 2, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (13, 3, 1, 'item3', 'items/item3.jpg', 1, 950, 1200, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (14, 4, 1, 'item5', 'items/item5.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
-INSERT INTO `leyao_web` VALUES (15, 6, 1, 'item6', 'items/item6.jpg', 1, 950, 1500, 0, '', '0000-0-0 00:00:00', '', '0000-0-0 00:00:00');
+INSERT INTO `leyao_web` VALUES (15, 6, 1, 'item6', 'items/item6.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (16, 7, 1, 'item7', 'items/item7.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (17, 8, 1, 'item8', 'items/item8.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (18, 29, 1, 'item9', 'items/item9.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
@@ -40,7 +40,7 @@ INSERT INTO `leyao_web` VALUES (20, 2, 1, 'item_list12', 'item_list/item_list12.
 INSERT INTO `leyao_web` VALUES (21, 2, 1, 'item_list13', 'item_list/item_list13.jpg', 1, 950, 950, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (22, 2, 1, 'item_list14', 'item_list/item_list14.jpg', 1, 950, 950, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (23, 2, 1, 'item_list15', 'item_list/item_list15.jpg', 1, 950, 950, 0, NULL, NULL, NULL, NULL);
-INSERT INTO `leyao_web` VALUES (24, 19, 1, 'item5', 'items/item5.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
+INSERT INTO `leyao_web` VALUES (24, 5, 1, 'item5', 'items/item5.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (25, 20, 1, 'item6', 'items/item6.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (26, 21, 1, 'item7', 'items/item7.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
 INSERT INTO `leyao_web` VALUES (27, 22, 1, 'item8', 'items/item8.jpg', 1, 950, 1500, 0, NULL, NULL, NULL, NULL);
