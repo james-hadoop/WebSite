@@ -10,6 +10,7 @@
 <!--todo 标签图标是否只能用ico格式-->
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet">
+<link href="css/index.css" rel="stylesheet">
 <!--[if lt IE 9]>
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
@@ -83,35 +84,35 @@
       <div class="item active">
        <a class="items_a">
         <p style="text-align: center;">
-         <img class="items" src="">
+         <img class="items items_rotate" src="">
         </p>
        </a>
       </div>
       <div class="item">
        <a class="items_a">
         <p style="text-align: center;">
-         <img class="items" src="" style="weight: 100%;">
+         <img class="items items_rotate" src="" style="weight: 100%;">
         </p>
        </a>
       </div>
       <div class="item">
        <a class="items_a">
         <p style="text-align: center;">
-         <img class="items" src="">
+         <img class="items items_rotate" src="">
         </p>
        </a>
       </div>
       <div class="item">
        <a class="items_a">
         <p style="text-align: center;">
-         <img class="items" src="">
+         <img class="items items_rotate" src="">
         </p>
        </a>
       </div>
       <div class="item">
        <a class="items_a">
         <p style="text-align: center;">
-         <img class="items" src="">
+         <img class="items items_rotate" src="">
         </p>
        </a>
       </div>
