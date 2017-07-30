@@ -34,7 +34,7 @@
                     var imageUrl = 'image/' + row.itemUrl;
                     var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
 
-                    var htmlString = "<div class=\"col-sm-6 col-xs-12\"><a href="+targetUrl+"><img src=\""+imageUrl+"\" class=\"img-responsive\"></a></div>";
+                    var htmlString = "<div class=\"col-sm-6 col-xs-12\"><a href="+targetUrl+"><img src=\""+imageUrl+"\" class=\"img-responsive\" style=\"margin-bottom:10px;\"></a></div>";
                     $(".my-music").after(htmlString);
                 }
             },
