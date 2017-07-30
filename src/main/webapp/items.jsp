@@ -32,7 +32,7 @@
                     var row = data.rows[index];
                     var imageUrl = 'image/' + row.itemUrl;
 
-                    var htmlString = "<img src=\""+imageUrl+"\" class=\"img-responsive\">";
+                    var htmlString = "<a class=\"thumbnail\"><img src=\""+imageUrl+"\" class=\"img-responsive\"></a>";
                     $(".image-container").after(htmlString);
                 }
             },
