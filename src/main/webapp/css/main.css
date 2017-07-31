@@ -91,3 +91,8 @@ a:hover
   width:75%;
   padding:30px;
 }
+
+.thumbnail
+{
+  border: 0px;
+}
