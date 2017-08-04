@@ -1,3 +1,4 @@
+--create database leyao;
 use leyao;
 DROP table IF EXISTS `leyao_web`;
 CREATE table `leyao_web` (

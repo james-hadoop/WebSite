@@ -20,8 +20,6 @@
 <script src="js/jquery-1.11.3.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<script src="js/swiper.min.js"></script>
-
 <script>
     $(function() {
         var getData = {
@@ -38,36 +36,9 @@
                     alert("No resouces found!");
                     return;
                 }
-                
-                var count=0;
-                $("a .items_lunbo").each(function(index, value) {
-                    console.info('count='+count++);
-                    console.info('index='+index);
-                });
 
-/*                 $(".items_lunbo").each(function(index, value) {
-                    console.info(data.rows[index]);
-                    console.info(index);
-
-                    var itemId = data.rows[index].itemId;
-
-                    $(this).attr({
-                        id : itemId
-                    });
-                    $(this).attr({
-                        src : 'image/' + data.rows[index].itemUrl
-                    });
-                }); */
-
-/*                 $(".items_lunbo_a").each(function(index, value) {
-                    var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
-                    console.info('targetUrl=' + targetUrl);
-                    $(this).attr({
-                        href : targetUrl
-                    });
-                });
-
-                $(".items").each(function(index, value) {
+                var count = 0;
+                $(".items_lunbo").each(function(index, value) {
                     var itemId = data.rows[index].itemId;
 
                     $(this).attr({
@@ -78,13 +49,27 @@
                     });
                 });
 
-                $(".items_a").each(function(index, value) {
-                    var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index].itemId;
-                    console.info('targetUrl=' + targetUrl);
-                    $(this).attr({
-                        href : targetUrl
-                    });
-                }); */
+////////////////////////////////////////
+                var galleryTop = new Swiper('.gallery-top', {
+                    nextButton : '.swiper-button-next',
+                    prevButton : '.swiper-button-prev',
+                    spaceBetween : 3,
+                    loop : true,
+                    loopedSlides : 5, //looped slides should be the same
+                    autoplay : 3000,
+                    speed : 300,
+                });
+                var galleryThumbs = new Swiper('.gallery-thumbs', {
+                    spaceBetween : 3,
+                    slidesPerView : 5,//几张图
+                    touchRatio : 0.2,
+                    loop : true,
+                    loopedSlides : 5, //looped slides should be the same
+                    slideToClickedSlide : true,
+                    centeredSlides : true
+                });
+                galleryTop.params.control = galleryThumbs;
+                galleryThumbs.params.control = galleryTop;
             },
             error : function(XMLHttpRequest, textStatus, errorThrown) {
                 alert(textStatus);//error
@@ -99,38 +84,38 @@
  <%@ include file="header.jsp"%>
 
  <!-- Swiper -->
- <div class="swiper-container gallery-top">
-  <div class="swiper-wrapper">
-   <div class="swiper-slide">
-    <a class="aitems_lunbo_a"> <img class="items_lunbo" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="aitems_lunbo_a"> <img class="items_lunbo" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="aitems_lunbo_a"> <img class="items_lunbo" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="aitems_lunbo_a"> <img class="items_lunbo" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="aitems_lunbo_a"> <img class="items_lunbo" src="">
-    </a>
-   </div>
-
+   <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+  <div class="swiper-slide">
+   <a class="items_lunbo_a"> <img class="items_lunbo" src="">
+   </a>
+  </div>
+  <div class="swiper-slide">
+   <a class="items_lunbo_a"> <img class="items_lunbo" src="">
+   </a>
+  </div>
+  <div class="swiper-slide">
+   <a class="items_lunbo_a"> <img class="items_lunbo" src="">
+   </a>
+  </div>
+  <div class="swiper-slide">
+   <a class="items_lunbo_a"> <img class="items_lunbo" src="">
+   </a>
+  </div>
+  <div class="swiper-slide">
+   <a class="items_lunbo_a"> <img class="items_lunbo" src="">
+   </a>
   </div>
   <!-- Add Arrows -->
   <div class="swiper-button-next swiper-button-white"></div>
   <div class="swiper-button-prev swiper-button-white"></div>
  </div>
+ </div></div>
 
 
 
- <!--   <div class="swiper-container gallery-thumbs">
+<div class="swiper-container gallery-thumbs">
     <div class="swiper-wrapper">
 
     <div class="swiper-slide">
@@ -160,8 +145,9 @@
     </div>
 
     </div>
-  </div> -->
- <!-- Initialize Swiper -->
+  </div>
+
+ <script src="js/swiper.min.js"></script>
  <script>
         var galleryTop = new Swiper('.gallery-top', {
             nextButton : '.swiper-button-next',

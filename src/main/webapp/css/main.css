@@ -16,7 +16,7 @@ body
   color:#888;
   font-style: normal;
   /*background-color:#f2f2f2;*/
-  /*background-color:#DEDEDE;*/
+ /*  background-color:#DEDEDE; */
   background-color:#ffffff;
 }
 .my-navbar .box .item img
@@ -45,17 +45,7 @@ a:hover
 
 
 
-.my-main2
-{
-  border-top:1px solid white;
-}
 
-.my-main2 .col-md-3,.my-main2 .col-sm-6,.my-main2 .col-xs-12
-{
-  padding:0;
-  border-right:1px solid white;
-  border-bottom:1px solid white;
-}
 
 .box1
 {
@@ -85,6 +75,43 @@ a:hover
 
 }
 
+
+ .swiper-container {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+.gallery-top {
+  height:77vh;
+}
+.gallery-thumbs {
+  box-sizing: border-box;
+  padding: 3px 0;
+}
+.gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+
+}
+.gallery-top .swiper-slide a img{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+
+}
+.gallery-thumbs .swiper-slide a img{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+
+
 .outside
 {
   background-color:white;
@@ -92,7 +119,6 @@ a:hover
   padding:30px;
 }
 
-.thumbnail
-{
-  border: 0px;
-}
+
+
+
