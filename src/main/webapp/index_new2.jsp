@@ -39,14 +39,21 @@
 
                 var count = 0;
                 $(".items_lunbo").each(function(index, value) {
-                    var itemId = data.rows[index].itemId;
+                    console.info('count='+count++);
+                    console.info(data.rows[index%5].itemUrl);
+                    console.info(data.rows[index%5].itemId);
+                    
+                    var itemId1=data.rows[index%5].itemId;
+                    var itemUrl1=data.rows[index%5].itemUrl;
+                    
+                    var itemId = 10;
 
-                    $(this).attr({
+/*                     $(this).attr({
                         id : itemId
                     });
                     $(this).attr({
                         src : 'image/' + data.rows[index].itemUrl
-                    });
+                    }); */
                 });
 
 ////////////////////////////////////////
