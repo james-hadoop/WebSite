@@ -1,0 +1,124 @@
+/*-------------------------base------------------------------*/
+p,ul,div,span,a,li
+{
+  margin:0;
+  padding:0;
+}
+
+body
+{
+  min-width: 320px;
+  font-size: 14px;
+  line-height: 1.52947;
+  font-weight: 100;
+  letter-spacing: -.021em;
+  font-family:"Apple San Francisco","Helvetica Neue","Helvetica","Arial",sans-serif;
+  color:#888;
+  font-style: normal;
+  /*background-color:#f2f2f2;*/
+ /*  background-color:#DEDEDE; */
+  background-color:#ffffff;
+}
+.my-navbar .box .item img
+{
+  border:none;
+}
+
+a
+{
+  cursor:pointer;
+  color:#888;
+
+}
+
+a:hover
+{
+  cursor:pointer;
+  color:#cccccc;
+}
+
+.my-navbar
+{
+  background-color:rgba(0,0,0,0.8);
+  height:54px;
+}
+
+
+
+
+
+.box1
+{
+  display:-webkit-flex;/* Safari */
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-around;
+  align-items:center;
+  margin:0 auto;
+  width:90%;
+
+}
+
+.box2
+{
+  display:-webkit-flex;/* Safari */
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-around;
+  align-items:center;
+  margin:30px auto;
+  padding:20px 0;
+  width:90%;
+  border-top:1px solid #C8C8C8;
+
+}
+
+
+ .swiper-container {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+.gallery-top {
+  height:77vh;
+}
+.gallery-thumbs {
+  box-sizing: border-box;
+  padding: 3px 0;
+}
+.gallery-thumbs .swiper-slide {
+  height: 100%;
+  opacity: 0.4;
+
+}
+.gallery-top .swiper-slide a img{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+
+}
+.gallery-thumbs .swiper-slide a img{
+  display: inline-block;
+  height: auto;
+  max-width: 100%;
+}
+
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+
+
+.outside
+{
+  background-color:white;
+  width:75%;
+  padding:30px;
+}
+
+
+
+

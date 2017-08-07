@@ -1,23 +1,9 @@
---create database leyao;
-use leyao;
-DROP table IF EXISTS `leyao_web`;
-CREATE table `leyao_web` (
-  `item_id` int NOT NULL AUTO_INCREMENT,
-  `item_parent_id` int NOT NULL DEFAULT 0,
-  `item_type` int NOT NULL DEFAULT 1 COMMENT '1:item; 2:header; 3:footer; 4:audio; 5:vedio',
-  `item_name` VARCHAR(50) NOT NULL DEFAULT '?',
-  `item_url` VARCHAR(100) NOT NULL DEFAULT '?',
-  `item_order` int NOT NULL DEFAULT -1,
-  `item_length` int DEFAULT -1,
-  `item_width` int DEFAULT -1,
-  `is_delete` int NOT NULL DEFAULT 0,
-  `create_username` VARCHAR(30),
-  `create_timestamp` datetime,
-  `update_username` VARCHAR(30),
-  `update_timestamp` datetime,
-  PRIMARY KEY (`item_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+/*
+-- Query: SELECT * FROM leyao.leyao_web
+LIMIT 0, 1000
 
+-- Date: 2017-08-08 06:52
+*/
 INSERT INTO `leyao_web` (`item_id`,`item_parent_id`,`item_type`,`item_name`,`item_url`,`item_order`,`item_length`,`item_width`,`is_delete`,`create_username`,`create_timestamp`,`update_username`,`update_timestamp`) VALUES (1,0,3,'f1','footer/f1.jpg',1,950,300,0,NULL,NULL,NULL,NULL);
 INSERT INTO `leyao_web` (`item_id`,`item_parent_id`,`item_type`,`item_name`,`item_url`,`item_order`,`item_length`,`item_width`,`is_delete`,`create_username`,`create_timestamp`,`update_username`,`update_timestamp`) VALUES (2,0,2,'h1','header/h1.jpg',1,72,44,0,NULL,NULL,NULL,NULL);
 INSERT INTO `leyao_web` (`item_id`,`item_parent_id`,`item_type`,`item_name`,`item_url`,`item_order`,`item_length`,`item_width`,`is_delete`,`create_username`,`create_timestamp`,`update_username`,`update_timestamp`) VALUES (3,0,2,'h2','header/h2.jpg',1,72,44,0,NULL,NULL,NULL,NULL);
