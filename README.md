@@ -1,3 +1,2 @@
 # Leyao
-http://localhost:8080/Leyao/leyao_web/getItemUrls?parent_item_id=1
-http://localhost:8080/Leyao/leyao_web_ui/index_page
+http://47.94.94.196/leyao_web/getItemUrls?parent_item_id=0&item_type=1

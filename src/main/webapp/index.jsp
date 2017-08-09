@@ -48,7 +48,6 @@
 
                 $(".items_a").each(function(index, value) {
                     var targetUrl = 'items.jsp?parent_item_id=' + data.rows[index % 5].itemId;
-                    console.info('targetUrl=' + targetUrl);
                     $(this).attr({
                         href : targetUrl
                     });
@@ -133,7 +132,7 @@
             loop : true,
             loopedSlides : 5, //looped slides should be the same
             autoplay : 3000,
-            speed : 300,
+            speed : 1000,
         });
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             spaceBetween : 3,
