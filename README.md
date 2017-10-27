@@ -1,2 +1,2 @@
-# Leyao
-http://47.94.94.196/leyao_web/getItemUrls?parent_item_id=0&item_type=1
+# WebSite
+http://localhost:8080/WebSite/web_site/getItemUrlsWithoutPaging

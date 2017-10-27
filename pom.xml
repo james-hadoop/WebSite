@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.leyao.web</groupId>
-  <artifactId>Leyao</artifactId>
+  <groupId>com.website.web</groupId>
+  <artifactId>WebSite</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Leyao Maven Webapp</name>
+  <name>WebSite Maven Webapp</name>
   <url>http://maven.apache.org</url>
    <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -254,7 +254,7 @@
   </dependency>
  </dependencies>
  <build>
-  <finalName>Leyao</finalName>
+  <finalName>WebSite</finalName>
   <plugins>
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>

@@ -23,7 +23,7 @@
             item_type : 1
         };
 
-        $.ajax("leyao_web/getItemUrls", {
+        $.ajax("/web_site/getItemUrls", {
             type : "GET",
             data : getData,
             dataType : "json",

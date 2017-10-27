@@ -79,8 +79,8 @@
 
  <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
   <property name="addToConfig" value="true" />
-  <property name="basePackage" value="com.leyao.web" />
-  <property name="annotationClass" value="com.leyao.web.annotation.MybatisMapper" />
+  <property name="basePackage" value="com.website.web" />
+  <property name="annotationClass" value="com.website.web.annotation.MybatisMapper" />
   <property name="sqlSessionFactoryBeanName" value="mysqlSqlSessionFactory" />
  </bean>
 

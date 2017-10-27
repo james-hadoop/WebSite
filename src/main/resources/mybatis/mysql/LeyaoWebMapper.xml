@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.leyao.web.dao.mapper.LeyaoWebMapper">
-  <resultMap id="BaseResultMap" type="com.leyao.web.entity.LeyaoWeb">
+<mapper namespace="com.website.web.dao.mapper.WebSiteMapper">
+  <resultMap id="BaseResultMap" type="com.website.web.entity.WebSiteEntity">
     <id column="item_id" jdbcType="INTEGER" property="itemId" />
     <result column="item_parent_id" jdbcType="INTEGER" property="itemParentId" />
     <result column="item_type" jdbcType="INTEGER" property="itemType" />
@@ -29,7 +29,7 @@
     parameterType="java.util.Map">
     select
     <include refid="Base_Column_List" />
-    from leyao.leyao_web
+    from web_site.web_site
     <where>
       is_delete = 0
       <if test="itemId != null and itemId !=-1">
@@ -52,7 +52,7 @@
     parameterType="java.util.Map">
     select
     count(1)
-    from leyao.leyao_web
+    from web_site.web_site
     <where>
       is_delete = 0
       <if test="itemId != null and itemId !=-1">

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.website.web.dao.mapper.WebSiteMapper">
+  <resultMap id="BaseResultMap" type="com.website.mybatis.model.WebEventEntity">
+    <id column="item_id" jdbcType="INTEGER" property="itemId" />
+    <result column="item_parent_id" jdbcType="INTEGER" property="itemParentId" />
+    <result column="item_type" jdbcType="INTEGER" property="itemType" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="item_url" jdbcType="VARCHAR" property="itemUrl" />
+    <result column="item_order" jdbcType="INTEGER" property="itemOrder" />
+    <result column="item_length" jdbcType="INTEGER" property="itemLength" />
+    <result column="item_width" jdbcType="INTEGER" property="itemWidth" />
+    <result column="is_delete" jdbcType="INTEGER" property="isDelete" />
+    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+    <result column="create_timestamp" jdbcType="TIMESTAMP" property="createTimestamp" />
+    <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
+    <result column="update_timestamp" jdbcType="TIMESTAMP" property="updateTimestamp" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    item_id, item_parent_id, item_type, item_name, item_url, item_order, item_length, 
+    item_width, is_delete, create_username, create_timestamp, update_username, update_timestamp
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from web_site
+    where item_id = #{itemId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from web_site
+    where item_id = #{itemId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.website.mybatis.model.WebEventEntity">
+    insert into web_site (item_id, item_parent_id, item_type, 
+      item_name, item_url, item_order, 
+      item_length, item_width, is_delete, 
+      create_username, create_timestamp, update_username, 
+      update_timestamp)
+    values (#{itemId,jdbcType=INTEGER}, #{itemParentId,jdbcType=INTEGER}, #{itemType,jdbcType=INTEGER}, 
+      #{itemName,jdbcType=VARCHAR}, #{itemUrl,jdbcType=VARCHAR}, #{itemOrder,jdbcType=INTEGER}, 
+      #{itemLength,jdbcType=INTEGER}, #{itemWidth,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
+      #{createUsername,jdbcType=VARCHAR}, #{createTimestamp,jdbcType=TIMESTAMP}, #{updateUsername,jdbcType=VARCHAR}, 
+      #{updateTimestamp,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.website.mybatis.model.WebEventEntity">
+    insert into web_site
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="itemId != null">
+        item_id,
+      </if>
+      <if test="itemParentId != null">
+        item_parent_id,
+      </if>
+      <if test="itemType != null">
+        item_type,
+      </if>
+      <if test="itemName != null">
+        item_name,
+      </if>
+      <if test="itemUrl != null">
+        item_url,
+      </if>
+      <if test="itemOrder != null">
+        item_order,
+      </if>
+      <if test="itemLength != null">
+        item_length,
+      </if>
+      <if test="itemWidth != null">
+        item_width,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="createUsername != null">
+        create_username,
+      </if>
+      <if test="createTimestamp != null">
+        create_timestamp,
+      </if>
+      <if test="updateUsername != null">
+        update_username,
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="itemId != null">
+        #{itemId,jdbcType=INTEGER},
+      </if>
+      <if test="itemParentId != null">
+        #{itemParentId,jdbcType=INTEGER},
+      </if>
+      <if test="itemType != null">
+        #{itemType,jdbcType=INTEGER},
+      </if>
+      <if test="itemName != null">
+        #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemUrl != null">
+        #{itemUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="itemLength != null">
+        #{itemLength,jdbcType=INTEGER},
+      </if>
+      <if test="itemWidth != null">
+        #{itemWidth,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createUsername != null">
+        #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="createTimestamp != null">
+        #{createTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUsername != null">
+        #{updateUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTimestamp != null">
+        #{updateTimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.website.mybatis.model.WebEventEntity">
+    update web_site
+    <set>
+      <if test="itemParentId != null">
+        item_parent_id = #{itemParentId,jdbcType=INTEGER},
+      </if>
+      <if test="itemType != null">
+        item_type = #{itemType,jdbcType=INTEGER},
+      </if>
+      <if test="itemName != null">
+        item_name = #{itemName,jdbcType=VARCHAR},
+      </if>
+      <if test="itemUrl != null">
+        item_url = #{itemUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="itemOrder != null">
+        item_order = #{itemOrder,jdbcType=INTEGER},
+      </if>
+      <if test="itemLength != null">
+        item_length = #{itemLength,jdbcType=INTEGER},
+      </if>
+      <if test="itemWidth != null">
+        item_width = #{itemWidth,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="createUsername != null">
+        create_username = #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="createTimestamp != null">
+        create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUsername != null">
+        update_username = #{updateUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTimestamp != null">
+        update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where item_id = #{itemId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.website.mybatis.model.WebEventEntity">
+    update web_site
+    set item_parent_id = #{itemParentId,jdbcType=INTEGER},
+      item_type = #{itemType,jdbcType=INTEGER},
+      item_name = #{itemName,jdbcType=VARCHAR},
+      item_url = #{itemUrl,jdbcType=VARCHAR},
+      item_order = #{itemOrder,jdbcType=INTEGER},
+      item_length = #{itemLength,jdbcType=INTEGER},
+      item_width = #{itemWidth,jdbcType=INTEGER},
+      is_delete = #{isDelete,jdbcType=INTEGER},
+      create_username = #{createUsername,jdbcType=VARCHAR},
+      create_timestamp = #{createTimestamp,jdbcType=TIMESTAMP},
+      update_username = #{updateUsername,jdbcType=VARCHAR},
+      update_timestamp = #{updateTimestamp,jdbcType=TIMESTAMP}
+    where item_id = #{itemId,jdbcType=INTEGER}
+  </update>
+</mapper>
