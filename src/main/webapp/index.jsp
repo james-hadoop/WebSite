@@ -19,8 +19,8 @@
   <script src="js/html5shiv.min.js"></script>
   <script src="js/respond.min.js"></script>
   <![endif]-->
-  
-  <script>
+
+<script>
     $(function() {
         var getData = {
             parent_item_id : 0,
@@ -32,12 +32,19 @@
             data : getData,
             dataType : "json",
             success : function(data, textStatus) {
+            	$(".items").attr({
+                    src : 'image/item_list/item_list5.jpg'
+                });
+                
                 if (data.total == 0) {
                     alert("No resouces found!");
                     return;
                 }
 
                 $(".items").each(function(index, value) {
+                	   console.info("index="+index);
+                	   console.info("\tindex process="+(index % 5));
+                	
                     $(this).attr({
                         id : data.rows[index % 5].itemId
                     });
@@ -62,69 +69,68 @@
 </script>
 </head>
 <body>
- <%@ include file="header.jsp"%>
+  <%@ include file="header.jsp"%>
 
 
- <!-- Swiper -->
- <div class="swiper-container gallery-top">
-  <div class="swiper-wrapper">
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
+  <!-- Swiper -->
+  <div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
 
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
   </div>
-  <!-- Add Arrows -->
-  <div class="swiper-button-next swiper-button-white"></div>
-  <div class="swiper-button-prev swiper-button-white"></div>
- </div>
- <div class="swiper-container gallery-thumbs">
-  <div class="swiper-wrapper">
-
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-   <div class="swiper-slide">
-    <a class="items_a"> <img class="items" src="">
-    </a>
-   </div>
-
+  
+  <div class="swiper-container gallery-thumbs">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a class="items_a"> <img class="items">
+        </a>
+      </div>
+    </div>
   </div>
- </div>
 
-<%@ include file="footer.jsp"%>
+  <%@ include file="footer.jsp"%>
 
- <!-- Initialize Swiper -->
- <script>
+  <!-- Initialize Swiper -->
+  <script>
         var galleryTop = new Swiper('.gallery-top', {
             nextButton : '.swiper-button-next',
             prevButton : '.swiper-button-prev',
@@ -136,7 +142,7 @@
         });
         var galleryThumbs = new Swiper('.gallery-thumbs', {
             spaceBetween : 3,
-            slidesPerView : 5,//几张图
+            slidesPerView : 4,//几张图
             touchRatio : 0.2,
             loop : true,
             loopedSlides : 5, //looped slides should be the same
